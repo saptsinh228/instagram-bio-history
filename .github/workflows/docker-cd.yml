@@ -40,7 +40,4 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/instagram-bio-history:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/instagram-bio-history:${{ env.SHA_SHORT }}
 
-      # Step 6: Optional success message
-      - name: Success message
-        run: echo Docker image pushed with tags: latest and ${{ env.SHA_SHORT }}
 
