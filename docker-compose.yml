@@ -12,6 +12,14 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  api:
+    build: .
+    container_name: insta_bio_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
 
 volumes:
   postgres_data:
