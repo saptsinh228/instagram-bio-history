@@ -32,7 +32,7 @@ jobs:
 
       # Step 5: Build and push Docker image with two tags
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true
@@ -42,5 +42,5 @@ jobs:
 
       # Step 6: Optional success message
       - name: Success message
-        run: echo "Docker image pushed with tags: latest and ${{ env.SHA_SHORT }}"
+        run: echo Docker image pushed with tags: latest and ${{ env.SHA_SHORT }}
 
