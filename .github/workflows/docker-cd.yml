@@ -23,7 +23,7 @@ jobs:
       # Step 3: Set Docker image name
       - name: Set Docker image name 
         id: set-image
-        run: echo "::set-output name=image-name::instagram-bio-history:${GITHUB_SHA::7}"
+        run: echo "image-name=instagram-bio-history:${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
 
       # Step 4: Build the image 
       - name: Build the Docker image 
@@ -33,7 +33,7 @@ jobs:
 
       # Step 5: upload the image in the artifact 
       - name: Save image in artifact 
-        uses: actions/upload-artifact@v3 
+        uses: actions/upload-artifact@v4
         with:
           name: docker-image
           path: |
@@ -49,7 +49,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Download Docker image artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: docker-image
           path: ./docker-image
