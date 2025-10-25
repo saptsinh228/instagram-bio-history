@@ -3,7 +3,7 @@ name: CD - Build & Push Docker Image
 on:
   push:
     branches:
-      - create/docker-cd-pipeline   # your default branch
+      - master   # your default branch
 
 jobs:
   build:
